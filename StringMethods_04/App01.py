@@ -2,7 +2,7 @@
 txt = "shubham nigam"
 print(txt.capitalize())
 
-# capitalize
+# capitalize (convert first character of string to upper case)
 print()
 txt = "banana"
 print(txt.center(20))
