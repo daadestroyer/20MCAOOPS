@@ -4,3 +4,5 @@
 ### 3. Strings
 ### 4. Strings Methods
 ### 5. Boolean
+### 6. Operators
+### 7. List
