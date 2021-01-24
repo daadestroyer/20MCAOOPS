@@ -15,3 +15,9 @@ i =0
 while i<len(tpl):
     print(tpl[i])
     i+=1
+
+# Multiply tuples
+print()
+fruits = ("apple", "banana", "cherry")
+mytuple = fruits * 2
+print(mytuple)
