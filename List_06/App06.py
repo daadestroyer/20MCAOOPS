@@ -55,3 +55,11 @@ list2 = [1, 2, 3]
 
 list1.extend(list2)
 print(list1)
+
+
+# count
+print(list1.count("a"))
+
+# index
+fruits = ['apple', 'banana', 'cherry']
+print(fruits.index("cherry"))
