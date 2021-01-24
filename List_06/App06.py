@@ -49,7 +49,7 @@ for x in lst2:
     lst1.append(x)
 print(lst1)
 
-# use extend method to add list1 item in another list
+# use extend  method to add list1 item in another list
 list1 = ["a", "b", "c"]
 list2 = [1, 2, 3]
 
