@@ -4,11 +4,12 @@ When we create a tuple, we normally assign values to it. This is called "packing
 '''
 
 fruits = ('apple','mango','cherry')
-(green,yellow,red) = fruits
+(green,yellow,red)= fruits
 print(green)
 print(yellow)
 print(red)
 
+print("green is {}".format(green)+" yellow is {}".format(yellow)+" red is {}".format(red))
 
 
 
