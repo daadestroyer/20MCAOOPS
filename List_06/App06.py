@@ -63,3 +63,5 @@ print(list1.count("a"))
 # index
 fruits = ['apple', 'banana', 'cherry']
 print(fruits.index("cherry"))
+
+

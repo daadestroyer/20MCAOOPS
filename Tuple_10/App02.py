@@ -25,7 +25,7 @@ print(thistuple[4:])  # start printing from 4th index
 print(thistuple[-4:-1])  # ('cherry', 'mango', 'orange')
 
 '''
-Check if Item Exists
+Check if Item Exist
 To determine if a specified item is present in a tuple use the in keyword:
 '''
 
