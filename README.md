@@ -6,3 +6,6 @@
 ### 5. Boolean
 ### 6. Operators
 ### 7. List
+### 8. Tuple
+### 9. Set
+### 10. Dictionaries
