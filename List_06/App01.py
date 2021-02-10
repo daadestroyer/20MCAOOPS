@@ -3,6 +3,13 @@
 2. Lists are one of 4 built-in data types in Python used to store collections of data, the other 3 are Tuple, Set, and Dictionary,
    all with different qualities and usage.
 3. Lists are created using square brackets
+4. List items are ordered , changeable 
+5. List allow duplicate values 
+6. List items are indexed 
+7. We can extract list element through index
+8. Order of list will not change
+9. If we add any element to list it will add at alst
+
 '''
 
 list = ['shubham','sakshi','shubhanshu']

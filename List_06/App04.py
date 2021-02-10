@@ -6,7 +6,6 @@ The remove() method removes the specified item.
 list = ['apple','banana','mango']
 list.remove('mango')
 print(list)
-
 '''
 Remove Specified Index
 The pop() method removes the specified index.
