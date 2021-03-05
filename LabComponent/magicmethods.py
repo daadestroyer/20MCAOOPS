@@ -8,9 +8,9 @@ ob1.__input__()
 
 while True:
         print("1- add \n ")
-        print("2- add \n ")
-        print("3- add \n ")
-        print("4- add \n ")
+        print("2- sub \n ")
+        print("3- mul \n ")
+        print("4- truediv \n ")
         print("0- exit \n ")
 
         ch = int(input('Enter your choice : '))
