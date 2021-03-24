@@ -1,4 +1,6 @@
 d = dict()
+import json
+
 msg = ""
 class Student:
 
@@ -104,6 +106,7 @@ class Operations(Student):
         print('1. Add Student Data')
         print('2. Get All Student Data')
         print('3. Get Student Data By Name')
+        print('4. Store data to file')
         print('0. EXIT')
         ch = int(input('Enter your choice'))
         if ch == 1:
@@ -113,5 +116,15 @@ class Operations(Student):
         elif ch == 3:
             name = input("enter the name of the student to be searched")
             st.printStudentDataByName(name)
+        elif ch == 4:
+            try:
+                file = open('data.txt','wt')
+                file.write('******* TPS Program student data *******')
+                file.write('\n')
+                file.write('\n')
+                file.write(str(d))
+                file.close()
+            except:
+                print('Unable to write to file...')
         else:
             break
