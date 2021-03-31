@@ -2,12 +2,23 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import sqlite3
 
+'''
+User of tk.Tk()
+---------------
+Creating an instance of Tk initializes this interpreter and creates the root window. 
+If you don't explicitly initialize it, one will be implicitly created when you create your first widget.
+'''
 root = tk.Tk()
+
+# title of the application (displayed at top of window)
 root.title("RV College of Engieering")
 
+# connect with sqlite database and generate a management.db file
 connection = sqlite3.connect('management.db')
 
+# database table name
 TABLE_NAME = "management_table"
+# Colom-1 of table
 STUDENT_ID = "student_id"
 STUDENT_NAME = "student_name"
 STUDENT_COLLEGE = "student_college"
@@ -15,8 +26,7 @@ STUDENT_ADDRESS = "student_address"
 STUDENT_PHONE = "student_phone"
 
 connection.execute(" CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ( " + STUDENT_ID +
-                   " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                   STUDENT_NAME + " TEXT, " + STUDENT_COLLEGE + " TEXT, " +
+                   " INTEGER PRIMARY KEY AUTOINCREMENT, " +STUDENT_NAME + " TEXT, " + STUDENT_COLLEGE + " TEXT, " +
                    STUDENT_ADDRESS + " TEXT, " + STUDENT_PHONE + " INTEGER);")
 
 appLabel = tk.Label(root, text="Student Management System", fg="black", width=35)
@@ -39,7 +49,7 @@ class Student:
         self.phoneNumber = phoneNumber
         self.address = address
 
-nameLabel = tk.Label(root, text="Enter your name",width=40, anchor='w',font=("Sylfaen", 12)).grid(row=1, column=0, padx=(500,0),pady=(50, 0))
+nameLabel = tk.Label(root, text="Enter your name",width=40, anchor='w',font=("Sylfaen", 12)).grid(row=1, column=0, padx=(520,0),pady=(50, 0))
 collegeLabel = tk.Label(root, text="Enter your college", width=40, anchor='w',font=("Sylfaen", 12)).grid(row=2, column=0, padx=(500,0))
 phoneLabel = tk.Label(root, text="Enter your phone number", width=40, anchor='w',font=("Sylfaen", 12)).grid(row=3, column=0, padx=(500,0))
 addressLabel = tk.Label(root, text="Enter your address", width=40, anchor='w',font=("Sylfaen", 12)).grid(row=4, column=0, padx=(500,0))
@@ -58,7 +68,7 @@ def takeNameInput():
     global nameEntry, collegeEntry, phoneEntry, addressEntry
     # global username, collegeName, phone, address
     global list
-    global TABLE_NAME, STUDENT_NAME, STUDENT_COLLEGE, STUDENT_ADDRESS, STUDENT_PHONE
+    global TABLE_NAME, STUDENT_ID,STUDENT_NAME, STUDENT_COLLEGE, STUDENT_ADDRESS, STUDENT_PHONE
     username = nameEntry.get()
     nameEntry.delete(0, tk.END)
     collegeName = collegeEntry.get()
@@ -68,7 +78,7 @@ def takeNameInput():
     address = addressEntry.get()
     addressEntry.delete(0, tk.END)
 
-    connection.execute("INSERT INTO " + TABLE_NAME + " ( " + STUDENT_NAME + ", " + STUDENT_COLLEGE + ", " + STUDENT_ADDRESS + ", " + STUDENT_PHONE + " ) VALUES ( '"+ username + "', '" + collegeName + "', '" +address + "', " + str(phone) + " ); ")
+    connection.execute("INSERT INTO " + TABLE_NAME + " ( " + STUDENT_NAME + ", "+ STUDENT_COLLEGE +" , "+ STUDENT_ADDRESS + ", " + STUDENT_PHONE + " ) VALUES ('"+ username + "', '" + collegeName + "', '" +address + "', " + str(phone) + " ); ")
 
 
     connection.commit()
