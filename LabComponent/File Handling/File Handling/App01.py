@@ -22,41 +22,59 @@ while True:
             f = open('abc.txt', 'r')
             print("Successfully")
         except FileNotFoundError:
-            print("File Not Found error")
+            print()
+            print("======File Not Found error======")
+            print()
     elif n == 3:
         try:
-            # when i will one parameter w then it will print Successfully
-            f = open('abc.txt', 'r', 'w')
-            print("Successfully")
+            # when i will give one parameter w then it will print Successfully else TypeError will come
+            f = open('abc.txt', 'w')
+            print()
+            print("======Successfully======")
         except TypeError:
-            print("Type Error")
+            print("======Type Error======")
     elif n == 4:
         try:
             f = open('abc.txt', 'w+')
             f.write("Sample")
             # when i will replace cc.txt to abc.txt then it will print Successfully
-            f1 = open('cc.txt', 'r')
-            print("Successfully")
+            f1 = open('abc.txt', 'r')
+            print()
+            print("======Successfully======")
+            print()
         except IOError:
-            print("IO Error")
+            print()
+            print("======IO Error======")
+            print()
     elif n == 5:
         try:
             # if file abc4.txt is exists then it will raise FileExistsError
-            f = os.path.exists('abc4.txt')
-            if f > 0:
+            f = os.path.exists('sdsds.txt')
+            print(f)
+            if f == "False" :
                 raise FileExistsError
-            print("Successfully")
+
+            print()
+            print("======Successfully======")
+            print()
         except FileExistsError:
-            print("File Exist Error")
+            print()
+            print("======File Exist Error======")
     elif n == 6:
-        try:
-            f = open('abc2.txt', 'a')
-            # When i will comment this line it will be show AttributeError
-            f.open('abc2.txt', 'r')
-            print("Successful")
-        except AttributeError:
-            print("AttributeError")
+            try:
+                f = open('abc.txt', 'a')
+                # When i will comment this line it will be show AttributeError
+                f.open('abc.txt', 'r')
+                print()
+                print("======Successful======")
+                print()
+            except AttributeError:
+                print()
+                print("======AttributeError======")
+                print()
     elif n == 0:
         break
     else:
-        print("Invalid input Please try again ")
+        print()
+        print("======Invalid input Please try again======")
+        print()
