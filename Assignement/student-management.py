@@ -97,8 +97,9 @@ def destroyRootWindow():
     appLabel.pack()
 
     tree = ttk.Treeview(secondWindow)
-    tree["columns"] = ("one", "two", "three", "four")
+    tree["columns"] = ("zero", "one", "two", "three" , "four")
 
+    tree.heading("zero", text="Student Id")
     tree.heading("one", text="Student Name")
     tree.heading("two", text="College Name")
     tree.heading("three", text="Address")
@@ -108,20 +109,13 @@ def destroyRootWindow():
     i = 0
 
     for row in cursor:
-        tree.insert('', i, text="Student " + str(row[0]),
-                    values=(row[1], row[2],
-                            row[3], row[4]))
+        tree.insert('', i, 
+                    values=(row[0], row[1],
+                            row[2], row[3] , row[4]))
         i = i + 1
 
     tree.pack()
     secondWindow.mainloop()
-
-
-# def printDetails():
-#     for singleItem in list:
-#         print("Student name is: %s\nCollege name is: %s\nPhone number is: %d\nAddress is: %s" %
-#               (singleItem.studentName, singleItem.collegeName, singleItem.phoneNumber, singleItem.address))
-#         print("****************************************")
 
 button = tk.Button(root, text="Take input", command=lambda :takeNameInput())
 button.grid(row=5, column=0, pady=50)
