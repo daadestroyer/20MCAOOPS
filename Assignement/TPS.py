@@ -1,5 +1,4 @@
 d = dict()
-import json
 
 msg = ""
 class Student:
@@ -75,8 +74,10 @@ class Student:
                     {
                         "name":self.name,
                         "usn":self.usn,
+                        "mfca":self.mfca,
                         "cn":self.cn,
-                        "lss":self.oops,
+                        "lss":self.lss,
+                        "oops":self.oops,
                         "web":self.web,
                         "avg":self.avg
                     }
@@ -84,7 +85,6 @@ class Student:
         )
 
     def printAllStudent(self):
-
         for key in d:
             print(key, d[key])
 
@@ -99,6 +99,7 @@ class Student:
         if flag == 0:
             print("No Student Found Of This Name : "+self.name)
 
+
 class Operations(Student):
     st = Student()
     while True:
@@ -106,7 +107,9 @@ class Operations(Student):
         print('1. Add Student Data')
         print('2. Get All Student Data')
         print('3. Get Student Data By Name')
-        print('4. Store data to file')
+        print('4. Update student marks')
+        print('5. Store data to file')
+
         print('0. EXIT')
         ch = int(input('Enter your choice'))
         if ch == 1:
@@ -117,6 +120,9 @@ class Operations(Student):
             name = input("enter the name of the student to be searched")
             st.printStudentDataByName(name)
         elif ch == 4:
+            name = input("enter student name to update her marks")
+            st.updateStudentMarks(name)
+        elif ch == 5:
             try:
                 file = open('data.txt','wt')
                 file.write('******* TPS Program student data *******')
