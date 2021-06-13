@@ -1,50 +1,68 @@
-while (True):
-    print('1. Add item into set : ')
-    print('2. Get length of set : ')
-    print('3. Reverse set :')
-    print('4. Remove element from set : ')
-    print('5. Add one set into another set : ')
-    print('6. Discard element from set : ')
-    print('7. Join two sets : ')
-    print('8. Get copy of set : ')
-    print('9. Find element in set :')
-    print('10. Remove last element from set : ')
-    print('11. Clear set : ')
-    print('12. Delete set : ')
-    print('13. EXIT : ')
-    set = {'1'}
-    choice = int(input('Enter choice : '))
+while True:
+		print('1. size of set')
+		print('2. get length of set')
+		print('3. add value to set')
+		print('4. pop')
+		print('5. intersection')
+		print('6. set difference')
+		print('7. symmetric difference')
+		print('8. remove specifie element')
+		print('9. clear set')
+		print('10. delete set')
 
-    if choice == 1:
-        set.clear()
-        item = int(input('Enter size of set'))
-        while item != 0:
-            n = input('Enter item')
-            set.add(n)
-            item -= 1
-        print(set)
+		choice = int(input('enter choice'))
 
-    elif choice == 2:
-        print(len(set))
+		if choice == 1:
+			st = set(input('enter element'))
+			print(st.__sizeof__())
 
+		elif choice == 2:
+			st = set(input('enter element'))
+			print(len(st))
 
+		elif choice == 3:
+			st = set(input('enter element'))
+			st.add(1000)
+			print(set)
 
-    elif choice == 6:
-        print()
-    elif choice == 7:
-        print()
+		elif choice == 4:
+			st = set(input('enter element'))
+			st.pop()
+			print(st)
 
-    elif choice == 9:
-        ele = input('Enter element to find in set')
-        print("dfdfdfdfdfdfdf "+ele in set)
-    elif choice == 10:
-        print("Last element of set is : "+set.pop())
-    elif choice == 11:
-        set.clear()
-        print(set)
-    elif choice == 12:
-        del set
-    else:
-        break
+		elif choice == 5:
+			st1 = set(input('enter element'))
+			st2 = set(input('enter element'))
+			print(st1.intersection(st2))
+			
 
-print("EXITED...")
+		elif choice == 6:
+			st1 = set(input('enter element'))
+			st2 = set(input('enter element'))
+			print(st1-st2)
+
+		elif choice == 7:
+			st1 = set(input('enter element'))
+			st2 = set(input('enter element'))
+			print(st1^st2)
+
+		elif choice == 8:
+			st = set(input('enter element'))
+			ele = input('enter element')
+			st.remove(ele)
+			print(st)
+
+		elif choice == 9:
+			st = set(input('enter element'))
+			st.clear()
+			print(st)
+
+		elif choice == 10:
+			st = set(input('enter element'))
+			del st
+			print(st)
+
+		else:
+			print('')
+			print('*** EXITING ***')
+			break
