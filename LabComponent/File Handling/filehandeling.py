@@ -1,42 +1,79 @@
-"""try:
-    f1 = open("abc.txt", "a")
-    f1.write("hiii")
-    f2 = open("hellow", "a")
-    for i in f1:
-        f2.write(i)
-    # =====================
-    print(f1.mode)
-    print(f1.close)
-    print(f1.name)
-except IOError:
-    print("error")
-    """
-'''with open("abc", "a") as f:
-    f.write("bhad me jao")
-#automatically closes file with this syntax
-'''
-'''
-with open("abc","r") as f1:
-    data=f1.readlines()
-    for line in data:
-        word = line.split()
-        print(word)
-'''
-'''
-# copies daata from one file to another
-#using with it takes care of automatically closing
-with open("abc", 'r') as f1, open("hellow", "a") as f2:
-    for line in f1:
-        f2.write(line)
-'''
+import os
 
+while True:
+    print("1.File Not Found Error")
+    print("2.Type Error")
+    print("3.IOError")
+    print("4.File Exist Error")
+    print("5.Attribute error")
+    print("6.Exit")
+    n = int(input("Enter Choice:"))
 
-class FileManager():
-    def __init__(self, filename, mode):
-        self.filename = filename
-        self.mode = mode
-        self.f1 = None
+    if n == 1:
+        try:
+            # whenever abc.txt will not there then it will FileNotFoundError
+            f = open('sds.txt', 'r')
+            print()
+            print("======Successfully======")
+            print()
+        except FileNotFoundError:
+            print()
+            print("======File Not Found error======")
+            print()
+    elif n == 2:
+        try:
+            # when i will give one parameter w then it will print Successfully else TypeError will come
+            f = open('abc.txt', 'w','a')
+            print()
+            print("======Successfully======")
+            print()
+        except TypeError:
+            print()
+            print("======Type Error======")
+            print()
+    elif n == 3:
+        try:
+            # open a file and if doesn't exist it create it
+            f = open('abc.txt', 'w+')
+            f.write("Sample")
+            # when i will replace cc.txt to abc.txt then it will print Successfully
+            f1 = open('cc.txt', 'r')
+            print()
+            print("======Successfully======")
+            print()
+        except IOError:
+            print()
+            print("======IO Error======")
+            print()
+    elif n == 4:
+        try:
+            # if file abc4.txt is exists then it will raise FileExistsError
+            f = os.path.exists('abcc.txt')
+            print(f)
+            if f == "False" :
+                raise FileExistsError
 
-    def __enter__(self):
-        self.f1 = open(self.filename, self.mode)
-        return self.f1
+            print()
+            print("======Successfully======")
+            print()
+        except FileExistsError:
+            print()
+            print("======File Exist Error======")
+    elif n == 5:
+            try:
+                f = open('abc.txt', 'a')
+                # When i will comment this line it will be show AttributeError
+                f.open('abc.txt', 'r')
+                print()
+                print("======Successful======")
+                print()
+            except AttributeError:
+                print()
+                print("======AttributeError======")
+                print()
+    elif n == 6:
+        break
+    else:
+        print()
+        print("======Invalid input Please try again======")
+        print()
