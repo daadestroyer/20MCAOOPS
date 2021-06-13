@@ -1,3 +1,4 @@
+
 class student:
     def __init__(self, usn, name, age):
         self.usn = usn
@@ -5,10 +6,9 @@ class student:
         self.age = age
 
     def display(self):
-        print("name: %s" % self.name)
-        print("USN: %s" % self.usn)
-        print("age: %d" % self.age)
-
+        print(self.name)
+        print(self.usn)
+        print(self.age)
 
 class MCA(student):
     def __init__(self):
@@ -23,10 +23,9 @@ class MCA(student):
 
     def display(self):
         student.display(self)
-        print("semester: %d" % self.age)
+        print("semester: %d" % self.semester)
         for i in range(0, 5):
-            print("marks in sub {}::{}".format((i+1), self.marks[i]))
-
+            print(self.marks[i])
 
 class bsec(MCA):
     def __init__(self):
@@ -40,8 +39,8 @@ class bsec(MCA):
         bsec.display(self)
 
     def display(self):
-        print("coordinator of b sec is %s" % self.coordinator)
-        print("percent is %d" % self.percent)
+        print(self.coordinator)
+        print(self.percent)
 
 
-ansh = bsec()
+shubham = bsec()
