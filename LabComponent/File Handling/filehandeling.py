@@ -1,79 +1,87 @@
 import os
-
 while True:
-    print("1.File Not Found Error")
-    print("2.Type Error")
-    print("3.IOError")
-    print("4.File Exist Error")
-    print("5.Attribute error")
-    print("6.Exit")
-    n = int(input("Enter Choice:"))
+            print('1. FileNotFound Error')
+            print('2. TypeError')
+            print('3. IOError')
+            print('4. FileExistError')
+            print('5. AtributeError')
+            print('6. EXIT')    
+            print()
+            ch = int(input('Enter your choice : '))
 
-    if n == 1:
-        try:
-            # whenever abc.txt will not there then it will FileNotFoundError
-            f = open('sds.txt', 'r')
-            print()
-            print("======Successfully======")
-            print()
-        except FileNotFoundError:
-            print()
-            print("======File Not Found error======")
-            print()
-    elif n == 2:
-        try:
-            # when i will give one parameter w then it will print Successfully else TypeError will come
-            f = open('abc.txt', 'w','a')
-            print()
-            print("======Successfully======")
-            print()
-        except TypeError:
-            print()
-            print("======Type Error======")
-            print()
-    elif n == 3:
-        try:
-            # open a file and if doesn't exist it create it
-            f = open('abc.txt', 'w+')
-            f.write("Sample")
-            # when i will replace cc.txt to abc.txt then it will print Successfully
-            f1 = open('cc.txt', 'r')
-            print()
-            print("======Successfully======")
-            print()
-        except IOError:
-            print()
-            print("======IO Error======")
-            print()
-    elif n == 4:
-        try:
-            # if file abc4.txt is exists then it will raise FileExistsError
-            f = os.path.exists('abcc.txt')
-            print(f)
-            if f == "False" :
-                raise FileExistsError
+            if ch == 1:
+                    try:
+                        # if file will not exist FileNotFoundError will come
+                        f = open('sdss.txt','r')
+                        print()
+                        print("=====SUCCESSFULLY=====")
+                        print()
+                    except FileNotFoundError:
+                        print()
+                        print("======FileNotFoundError======")
+                        print()
 
-            print()
-            print("======Successfully======")
-            print()
-        except FileExistsError:
-            print()
-            print("======File Exist Error======")
-    elif n == 5:
-            try:
-                f = open('abc.txt', 'a')
-                # When i will comment this line it will be show AttributeError
-                f.open('abc.txt', 'r')
-                print()
-                print("======Successful======")
-                print()
-            except AttributeError:
-                print()
-                print("======AttributeError======")
-                print()
-    elif n == 6:
-        break
-    else:
-        print()
-        print("======Invalid input Please try again======")
-        print()
+            elif ch == 2:
+                    try:
+                        # Giving extra mode like 'a' then TypeError will come , if we remove 'a' it will work fine
+                        f = open('abc.txt','w','a')
+                        print()
+                        print("=====SUCCESSFULLY=====")
+                        print()
+                    except TypeError:
+                        print()
+                        print("======TypeError======")
+                        print()
+            
+            elif ch == 3:
+                    try:
+                        # open a file or create it using w+ mode
+                        f = open('abc.txt','w+')
+                        f.write('sample content')
+                        # we created abc.txt but we're opening  cccc.txt file then IOError will come
+                        f1 = open('cccc.txt','r')
+                        print()
+                        print()
+                        print("=====SUCCESSFULLY=====")
+                    except IOError:
+                        print()
+                        print("======IOError======")
+                        print()
+            
+            elif ch == 4:
+                    try:
+                        # if file is not exist then it will give FileExistError
+                        f = os.path.exists('123.txt')
+                        print(f)
+                        if f == False :
+                            raise FileExistsError
+
+                        print()
+                        print("=====SUCCESSFULLY=====")
+                        print()
+                    except FileExistsError:
+                        print()
+                        print("======FileExistError======")
+                        print()
+
+            elif ch == 5:
+                    try:
+                        # we open file in append mode
+                        f = open('abc.txt','a')
+                        # again we open file in read mode
+                        f.open('abc.txt','r')
+                        print()
+                        print("=====SUCCESSFULLY=====")
+                        print()
+                    except AttributeError:
+                        print()
+                        print("======AttributeError======")
+                        print()
+                    
+            elif ch == 6:
+                        print('**************************')
+                        print('\t EXITING')
+                        print('**************************')
+                        break
+            else:
+                        print("=====Invalid Input Please Try Again=====")
